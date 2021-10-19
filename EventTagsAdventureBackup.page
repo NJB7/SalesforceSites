@@ -1,0 +1,119 @@
+<apex:page standardController="Account" recordSetVar="accounts" tabStyle="account" sidebar="false">
+
+    <style>
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 75px;
+            font-weight: thin;
+            color: rgb(37, 116, 169);
+            background: white;
+        }
+
+        h2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+            font-weight: unset;
+            color: rgb(51, 51, 51);
+        }
+
+        p {
+            text-align: left;
+            font-family: Arial;
+            font-size: 13px;
+            color: rgb(51, 51, 51);
+        }
+
+        strong {
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+        }
+
+        button {
+            width: 250px;
+            height: 70px;
+            margin: 0px auto 0px auto;
+            border: 2px solid white;
+            border-radius: 10px;
+            box-shadow: 7px 7px 7px white;
+            transition: all 0.2s ease-in-out;
+        }
+
+        button:hover {
+            background: rgb(37, 116, 169, 0.8);
+            border: 2px solid rgb(37, 116, 169);
+            cursor: pointer;
+        }
+
+        .imgsize {
+            max-height: 100px;
+            float: left;
+            border: 0px 0px 10px 0px;
+            padding: 0px 0px 0px 1px;
+        }
+
+        .title {
+            text-align: center;
+            padding: 0px 400px 100px 0px;
+        }
+
+        .homebutton {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            font-size: 24px;
+            background: rgb(37, 116, 169);
+            display: inline-block;
+            float: right;
+            margin: 0;
+
+        }
+
+        .taglabel {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            font-size: 24px;
+            background: rgb(37, 116, 169);
+            margin: 0 auto;
+        }
+
+        .centeralign {
+            display: inline-block;
+            margin-left: 30%;
+            margin-right: 30%;
+            text-align: center;
+        }
+
+    </style>
+
+    <apex:form >
+
+        <apex:pageBlock title="Event Tags on OTT">
+
+            <apex:pageBlockSection title="Header Logo?">
+
+                <apex:pageBlockSectionItem >
+
+                    <apex:commandLink value="https://wordfest.lightning.force.com/lightning/r/ContentDocument/0691U00000MNSR2QAP/view"
+                        id="theLink">
+                        <!-- https://xxxxxxxx.xxxx.content.force.com/servlet/servlet.FileDownload?file={!doc.Id}"> -->
+                        <!-- src="{!contentAsset.Wordfest_logo_black031.1}" -->
+                        <!-- </apex:outputLink> -->
+                    </apex:commandLink>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+
+            <apex:pageBlockSection title="Adventure Tags" columns="2">
+                
+                <apex:pageBlockTable value="{!accounts}" var="c">
+                    <apex:column value="{!c.name}"/>
+                </apex:pageBlockTable>
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>
